@@ -1,0 +1,210 @@
+*{
+    font-family:Arial;
+    margin:0;
+}
+
+body{
+    font-size: 80%;
+    color:white;
+	background-image: url('/static/images/BackBB.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size:cover;
+    display: grid;
+    height:100vh;
+    grid-template-columns: 200px auto 200px; /*sidebar main aside*/
+    grid-template-rows:100px 240px auto auto 15px auto; /*header nav section article footer*/
+    grid-template-areas:
+        "nav nav nav"
+        "header header header"
+        "sidebar section aside"
+        "sidebar article aside"
+        ". . ."
+        ". footer ."
+}
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: nav;
+}
+
+aside{
+    grid-area: aside;
+    color:white;
+}
+
+section{
+    grid-area: section;
+}
+
+article{
+    grid-area: article;
+}
+
+section, article{
+    background-color:#eee;  
+    background: rgba(0, 0, 0, 0.35);
+}
+
+footer{
+    color:white;
+    box-shadow:0px 4px 8px #696969;
+    background: rgba(0, 0, 0, 0.25);
+    grid-area: footer;
+    padding-top: 25px;
+    display:grid;
+    grid-template-columns: 1fr 200px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "infoOne detail infoTwo"
+}
+
+.footerDetail{
+    grid-area: detail;
+    text-align:center;
+}
+
+.footerInfoOne{
+}
+
+table{
+    color:white;
+    box-shadow:0px 4px 8px #696969;
+    border-radius:5px;
+    font-size: 180%; 
+    width: 100%;
+}
+
+h1{
+    font-weight: bold;
+}
+
+textarea{
+    color:white;
+    background: rgba(0, 0, 0, 0.75);
+    box-shadow:0px 4px 8px #696969;
+    font-size: 20px;
+}
+
+input{
+    color:white;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+td, th{
+    height: 30px;
+    text-align: left;  
+    background: rgba(0, 0, 0, 0.25);
+}
+
+a, a:hover, a:active, a:visited { 
+    color: white; 
+}
+
+Button{
+    background-color:black;
+    color:white;
+}
+
+[class*="oasisIMG"]{
+    width: auto; 
+    height: 220px;
+    padding:10px;
+    background-size: contain;
+    border-radius:50%;
+}
+.toCenter{
+        text-align: center;  
+}
+#secreteOne{
+    color: rgba(0, 0, 0, 0);
+}
+
+#img-container{
+    text-align: center;
+}
+
+#firstCol{
+    width:60%;   
+    max-width:200px;
+    word-wrap:break-word;
+}
+
+tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+tr:hover {
+    background: rgba(0, 0, 0);
+}
+#content{
+    width:60%;
+}
+#mh{
+    text-align:center;
+    background-color:black;
+    background: rgba(0, 0, 0, 0.65);
+    color:white;
+    padding:5px;
+}
+
+#sidebar {
+    text-align: left; 
+    position:fixed;
+    width:190px;
+    height:100%;
+    background: black;
+    background: rgba(0, 0, 0, 0.25);
+    left:-210px;
+    border: 1px solid #111111;
+    transition: all 200ms linear;
+}
+
+#sidebar.active {
+    left:0px;
+}
+
+#sidebar ul li {
+    color:white;
+    list-style:none;
+    padding:15px 10px;
+    border-bottom: 1px solid white;
+    font-size: 150%;
+}
+
+#sidebar ul li:hover {
+    background-color:#111111;
+}
+
+#sidebar .toggleBTN {
+    position:absolute;
+    left:230px;
+    top:20px;
+}
+
+#sidebar .toggleBTN span {
+    display:block;
+    width:30px;
+    height:5px;
+    background:white;
+    margin: 5px 0px;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+/*   */

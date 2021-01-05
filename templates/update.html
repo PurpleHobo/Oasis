@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <title>Oasis</title>
+{% endblock %}
+
+{% block header %}
+    <div id="img-container">
+        <a style="text-align:center" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+        <img class="oasisIMG" src="{{url_for('static', filename='images/oasis.jpg')}}" alt="Oasis Lost">
+        </a>
+    </div>
+{% endblock %}
+
+{% block section %}
+{% endblock %}
+
+{% block sidebar %}
+<div id="sidebar">
+    <div class="toggleBTN" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <ul>
+        <a href="/">
+        <li>Home</li>
+        </a>
+        <a href="/about">
+        <li>About</li>
+        </a>
+        <a href="/task">
+        <li>Task</li>
+        </a>
+        <a href="/goals">
+        <li>Goals</li>
+        </a>
+        <a href="/logout">
+        <li>Logout</li>
+        </a>
+    </ul>
+</div>
+{% endblock %}
+
+{% block sectionHeader %}
+    <h1 id="mh">Update Task</h1>
+{% endblock %}
+
+{% block Table %}
+<div class="content">
+    <form action="/task/update/{{task.id}}" method="POST">
+        <textarea type="text" name="content" id="content" cols="40" rows="5">{{task.content}}</textarea>
+        <br>
+        <input value="{{task.dueDate.strftime('%Y-%m-%d')}}" type="datetime-local" name="dateTask" id="dateTask">
+        <input type="submit" value="Update">
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="footerDetail">
+    <p>
+    <b>
+    <h1>Oasis 1.1</h1>
+    <br>
+    Developed by Chad
+    <br>
+    Made in 2020
+    <br>
+    <br>
+    </b>
+    <p>
+</div>
+{% endblock %}

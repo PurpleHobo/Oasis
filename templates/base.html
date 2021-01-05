@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+        
+        <script>
+            function toggleSidebar(){
+                document.getElementById("sidebar").classList.toggle('active');
+            }    
+        </script>
+
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        {% block sidebar %}{% endblock %}
+
+        <nav>
+            {% block nav %}{% endblock %}
+        </nav>
+
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+
+        <aside>
+            {% block aside %}{% endblock %}
+        </aside>
+
+        <section>
+            {% block sectionHeader %}{% endblock %}
+
+            {% block section %}{% endblock %}
+
+            {% block Table %}{% endblock %} <!--If there is a table-->
+        </section>
+
+        <article>
+            {% block articleHeader %}{% endblock %}
+
+            {% block article %}{% endblock %}
+        </article>
+
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+        
+    </body>
+
+</html>

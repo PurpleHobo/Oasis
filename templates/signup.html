@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+    <title>Oasis</title>
+{% endblock %}
+
+{% block header %}
+    <div id="img-container">
+        <a style="text-align:center" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+        <img class="oasisIMG" src="{{url_for('static', filename='images/oasis.jpg')}}" alt="Oasis Lost">
+        </a>
+    </div>
+{% endblock %}
+
+{% block sectionHeader %}
+    <h1 id="mh">Registration</h1>
+{% endblock %}
+
+{% block section %}
+<form method="POST" action "/signup">
+        <h2>
+        Sign Up!
+        </h2>
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.username, class='inputBox' ) }}
+        {{ wtf.form_field(form.password, class='inputBox' ) }}
+        {{ wtf.form_field(form.checkpassword, class='inputBox' )}}
+        <button type="submit">Sign Up!</button>
+</form>
+<h3>
+If You Are a Current User Please Login
+</h3>
+<a href='/login'>
+        <button>Login</button>
+</a>
+{% endblock %}
+
+{% block sidebar %}
+<div id="sidebar">
+    <div class="toggleBTN" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <ul>
+        <a href="/login/">
+        <li>Login</li>
+        </a>
+    </ul>
+</div>
+{% endblock %}
+
+{% block articleHeader %}
+{% endblock %}
+
+{% block aside %}
+{% endblock %}
+
+{% block footer %}
+<div class="footerDetail">
+    <p>
+    <b>
+    <h1>Oasis 1.1</h1>
+    <br>
+    Developed by Chad
+    <br>
+    Made in 2020
+    <br>
+    <br>
+    </b>
+    <p>
+</div>
+{% endblock %}
