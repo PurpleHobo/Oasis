@@ -1,5 +1,4 @@
 #############imports, if you remove any of these it will break OwO
-import threading #WillowBot
 from flask import Flask, render_template, url_for, request, redirect, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -211,16 +210,12 @@ def logout():
     logout_user()
     return redirect('/')
 
-#def botThread():
-#    WillowBot.client.run('NzAyNDA4Nzg5NDAzNjMxNjQ3.Xp_nuQ.R1snkn0y0D7_x9tHnweKHmAOdGI')
 ####################
 
 #############executable code
 print("Beep boop, we are online!") #played at startup
 
 if __name__ == "__main__": #checks that the module is not being imported and then starts the webserver
-    #threadOne = threading.Thread(target=botThread) #hash out when working on webserver
-    #threadOne.start() #also hash this
     #app.run(debug=False) #it runs twice if true and opens my bot twice which is obnoxious
     app.run(host='0.0.0.0', debug=False) #it runs twice if true and opens my bot twice which is obnoxious
 
